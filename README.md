@@ -4,10 +4,30 @@ This project creating with React hooks, and for the image is come from unsplash 
 ## screenshot
 ![React Infinite Scroll](./Infinitescrool.png)
 
-## Links
-Unplash Developers : https://unsplash.com/developers <br/>
-react-infinite-scroll-component :  https://www.npmjs.com/package/react-infinite-scroll-component <br/>
-Pure CSS Loader: https://loading.io/css/ <br/>
+### tried to create modal 
+import React from 'react';
+import { motion } from 'framer-motion';
 
-### Video Tutorial
-You can see my youtube video for this project in [here](https://youtu.be/uFuOPlOk0sQ)
+const Modal = ({ setSelectedImg, selectedImg }) => {
+
+  const handleClick = (e) => {
+    if (e.target.classList.contains('backdrop')) {
+      setSelectedImg(null);
+    }
+  }
+
+  return (
+    <motion.div className="backdrop" onClick={handleClick}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <motion.img src={selectedImg} alt="enlarged pic" 
+        initial={{ y: "-100vh" }}
+        animate={{ y: 0 }}
+      />
+    </motion.div>
+  )
+}
+
+export default Modal;
+
