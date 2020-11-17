@@ -1,33 +1,14 @@
+##  Technical Assessment Yellow Class
+
+
 # React Infinite Scroll 
-This project creating with React hooks, and for the image is come from unsplash API.
+-Used the unsplash API to get the list of photos (https://unsplash.com/developers)
+
+-Infinite scroll in the photo feed
 
 ## screenshot
 ![React Infinite Scroll](./Infinitescrool.png)
 
-### tried to create modal 
-import React from 'react';
-import { motion } from 'framer-motion';
 
-const Modal = ({ setSelectedImg, selectedImg }) => {
 
-  const handleClick = (e) => {
-    if (e.target.classList.contains('backdrop')) {
-      setSelectedImg(null);
-    }
-  }
-
-  return (
-    <motion.div className="backdrop" onClick={handleClick}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
-      <motion.img src={selectedImg} alt="enlarged pic" 
-        initial={{ y: "-100vh" }}
-        animate={{ y: 0 }}
-      />
-    </motion.div>
-  )
-}
-
-export default Modal;
 
